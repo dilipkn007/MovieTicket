@@ -1,1 +1,9 @@
-.idea
+.akpoints
+.replit
+__pycache__/
+poetry.lock
+pyproject.toml
+reader/__pycache__/configReader.cpython-310.pyc
+replit.nixeeee
+.breakpoints
+replit.nix
