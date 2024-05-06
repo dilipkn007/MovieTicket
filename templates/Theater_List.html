@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Theater List</title>
+  <style>
+    /* Your additional CSS styles specific to theater list page */
+    /* You can customize this according to your design preferences */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .theater-card {
+      width: calc(33.33% - 20px); /* Adjust the width as needed */
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .theater-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .theater-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .theater-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .theater-rating {
+      color: #ff7f0e;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .theater-location {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .film-timings {
+      margin-bottom: 10px;
+    }
+
+    .film-timing {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .select-seats-btn {
+      background-color: #ff7f0e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .select-seats-btn:hover {
+      background-color: #ff922b;
+    }
+
+    /* Seat selection styles */
+    .seat {
+      background-color: rgb(129, 127, 127);
+      border: none;
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .selected {
+      background-color: #ff7f0e;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Theater card 1 -->
+  <div class="theater-card" id="theater1">
+    <img class="theater-image" src="theater1.jpg" alt="Theater 1">
+    <div class="theater-name">Theater 1</div>
+    <div class="theater-rating">Rating: 4.5</div>
+    <div class="theater-location">Location: City Center</div>
+    <div class="film-timings">
+      <span class="film-timing">10:00 AM</span>
+      <span class="film-timing">2:00 PM</span>
+      <span class="film-timing">6:00 PM</span>
+    </div>
+
+    <a href="/Book_Seats" class="select-seats-btn" onclick="submitForm(event)">Select Seats</a>
+     <form id="bookt1"  action="/store_data/t/1" method="POST" class="hidden-form">
+        <input type="hidden" name="t1" value="Theater1">
+      </form>
+    <div class="selected-seats" id="selected-seats-theater1"></div>
+  </div>
+
+  <!-- Theater card 2 -->
+  <div class="theater-card" id="theater2">
+    <img class="theater-image" src="theater2.jpg" alt="Theater 2">
+    <div class="theater-name">Theater 2</div>
+    <div class="theater-rating">Rating: 4.2</div>
+    <div class="theater-location">Location: Downtown</div>
+    <div class="film-timings">
+      <span class="film-timing">11:00 AM</span>
+      <span class="film-timing">3:00 PM</span>
+      <span class="film-timing">7:00 PM</span>
+    </div>
+    <a href="/Book_Seats" class="select-seats-btn" onclick="submitForm2(event)">Select Seats</a>
+    <form id="bookt2"  action="/store_data/t/2" method="POST" class="hidden-form">
+        <input type="hidden" name="t2" value="Theater2">
+      </form>
+    <div class="selected-seats" id="selected-seats-theater2"></div>
+  </div>
+
+  <!-- Add more theater cards as needed -->
+</div>
+
+<script>
+   function submitForm(event) {
+        event.preventDefault(); // Prevent default anchor behavior (navigation)
+        document.getElementById('bookt1').submit(); // Submit the form
+    }
+
+    function submitForm2(event) {
+        event.preventDefault(); // Prevent default anchor behavior (navigation)
+        document.getElementById('bookt2').submit(); // Submit the form
+    }
+</script>
+
+</body>
+</html>
