@@ -211,17 +211,37 @@ def store_seating():
         time=request.form['date']
         amount=request.form['amount']
         print(seates,date,time)
-        ticket_id=collection.find_one({'id':{'$exists': True}})['id']
-        movie_name=collection.find_one({'movie':{'$exists': True}})['movie']
-        screen_name=collection.find_one({'theater':{'$exists': True}})['theater']
+        # ticket_id=collection.find_one({'id':{'$exists': True}})['id']
+        # movie_name=collection.find_one({'movie':{'$exists': True}})['movie']
+        # screen_name=collection.find_one({'theater':{'$exists': True}})['theater']
         collection.insert_one({'seates': seates})
         collection.insert_one({'date': date})
         collection.insert_one({'time': time})
         collection.insert_one({'amount': amount})
 
-        create_movie_ticket(ticket_id, movie_name, screen_name, seates, date, time, amount)
-        return send_file('movie_ticket.pdf',as_attachment=True)
+        # create_movie_ticket(ticket_id, movie_name, screen_name, seates, date, time, amount)
+        # return send_file('movie_ticket.pdf',as_attachment=True)
+        return render_template('QR.html')
     return render_template('Book_Seats.html')
+
+
+@app.route('/get_ticket',methods=['POST'])
+def get_ticket():
+    if request.method == 'POST':
+        ticket_id = collection.find_one({'id': {'$exists': True}})['id']
+        movie_name = collection.find_one({'movie': {'$exists': True}})['movie']
+        screen_name = collection.find_one({'theater': {'$exists': True}})['theater']
+        seates=collection.find_one({'seates':{'$exists': True}})['seates']
+        date=collection.find_one({'date':{'$exists': True}})['date']
+        time=collection.find_one({'time':{'$exists':True}})['time']
+        amount=collection.find_one({'amount': {'$exists':True}})['amount']
+
+        create_movie_ticket(ticket_id, movie_name, screen_name, seates, date, time, amount)
+        return send_file('movie_ticket.pdf', as_attachment=True)
+
+
+    return render_template('Book_Seats.html')
+
 
 @app.route('/kannadahorror')
 def kannada_horror():
@@ -229,17 +249,19 @@ def kannada_horror():
 
 @app.route('/kannadaaction')
 def kannada_action():
-    ka_actmv_1=movie_collections.find_one({'ka_actmv_1.movie':{'$exists': True}})['ka_actmv_1']['movie']
-    ka_actmv_2=movie_collections.find_one({'ka_actmv_2.movie':{'$exists': True}})['ka_actmv_2']['movie']
+    ka_actmv_1=movie_collections.find_one({'ka_actmv_1.movie':{'$exists': True}})
+    ka_actmv_2=movie_collections.find_one({'ka_actmv_2.movie':{'$exists': True}})
 
     if ka_actmv_2 or ka_actmv_1:
         with open('./templates/kannadaaction.html', 'r') as file:
             html_content = file.read()
         soup = BeautifulSoup(html_content, 'html.parser')
         if ka_actmv_1:
+            ka_actmv_1=ka_actmv_1['ka_actmv_1']['movie']
             input_element1 = soup.find('input', {'name': 'ka_actmv_1'})
             input_element1['value'] = ka_actmv_1
         if ka_actmv_2:
+            ka_actmv_2=ka_actmv_2['ka_actmv_2']['movie']
             input_element2 = soup.find('input', {'name': 'ka_actmv_2'})
             input_element2['value'] = ka_actmv_2
         with open('./templates/kannadaaction.html', 'w') as file:
