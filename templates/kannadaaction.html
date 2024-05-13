@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-   <title> Responsive Drop Down Navigation Menu | CodingLab </title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <style>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title> Responsive Drop Down Navigation Menu | CodingLab </title>
+<link href="../static/css/style.css" rel="stylesheet"/>
+<!-- Boxicons CDN Link -->
+<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>
 /* Googlefont Poppins CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -377,95 +377,90 @@ nav .navbar .links li .sub-menu li{
       background-color: #ff922b;
     }
      </style>
-   </head>
+</head>
 <body>
-  <nav>
-    <div class="navbar">
-      <i class='bx bx-menu'></i>
-      <div class="logo"><a href="#">Booking</a></div>
-      <div class="nav-links">
-        <div class="sidebar-logo">
-          <span class="logo-name">Booking</span>
-          <i class='bx bx-x' ></i>
-        </div>
-        <ul class="links">
-          <li><a href="#">HOME</a></li>
-          <li>
-            <a href="#">Horrer</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="kannadahorror.html">Kannada</a></li>
-              
-              <li><a href="hindihorror.html">Hindi</a></li>
-              <li><a href="englishhorror.html">English</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Comedy</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="kannadacomdey.html">Kannada</a></li>
-              <li><a href="hindicomdey.html">Hindi</a></li>
-              <li><a href="englishcomdey.html">English</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Romantic</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="kannadaromantic.html">Kannada</a></li>
-              <li><a href="hindhiromantic.html">Hindi</a></li>
-              <li><a href="englishromantic.html">English</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Action</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="kannadaaction.html">Kannada</a></li>
-
-              <li><a href="hindiaction.html">Hindi</a></li>
-              <li><a href="englishaction.html">English</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="search-box">
-        <i class='bx bx-search'></i>
-        <div class="input-box">
-          <input type="text" placeholder="Search...">
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- images -->
-  <div class="container">
-    <div class="image-card">
-      <img src="https://via.placeholder.com/300" alt="Movie Image">
-      <div class="overlay">
-        <div class="rating">4.5</div>
-        <a href="/theaterlist" class="book-now-btn" onclick="submitForm(event)" >Book Now</a>
-        <form id="bookingForm" action="/store_data/1" method="POST" class="hidden-form">
-        <input type="hidden" name="ka_actmv_1" value="KGF Chapter 1">
-      </form>
-      </div>
-    </div>
-    <!-- Add more image cards here -->
-    <div class="image-card">
-      <img src="https://via.placeholder.com/300" alt="Movie Image">
-      <div class="overlay">
-        <div class="rating">4.5</div>
-        <a href="./theaterlist" class="book-now-btn" onclick="submitForm2(event)">Book Now</a>
-         <form id="bookingForm2"  action="/store_data/2" method="POST" class="hidden-form">
-        <input type="hidden" name="ka_actmv_2" value="KGF Chapter 2">
-      </form>
-      </div>
-    </div>
-    </div>
-
-
-    
+<nav>
+<div class="navbar">
+<i class="bx bx-menu"></i>
+<div class="logo"><a href="#">Booking</a></div>
+<div class="nav-links">
+<div class="sidebar-logo">
+<span class="logo-name">Booking</span>
+<i class="bx bx-x"></i>
+</div>
+<ul class="links">
+<li><a href="#">HOME</a></li>
+<li>
+<a href="#">Horrer</a>
+<i class="bx bxs-chevron-down htmlcss-arrow arrow"></i>
+<ul class="htmlCss-sub-menu sub-menu">
+<li><a href="/kannadahorror">Kannada</a></li>
+<li><a href="/hindihorror">Hindi</a></li>
+<li><a href="/englishhorror">English</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Comedy</a>
+<i class="bx bxs-chevron-down htmlcss-arrow arrow"></i>
+<ul class="htmlCss-sub-menu sub-menu">
+<li><a href="kannadacomdey.html">Kannada</a></li>
+<li><a href="hindicomdey.html">Hindi</a></li>
+<li><a href="englishcomdey.html">English</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Romantic</a>
+<i class="bx bxs-chevron-down htmlcss-arrow arrow"></i>
+<ul class="htmlCss-sub-menu sub-menu">
+<li><a href="kannadaromantic.html">Kannada</a></li>
+<li><a href="hindhiromantic.html">Hindi</a></li>
+<li><a href="englishromantic.html">English</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Action</a>
+<i class="bx bxs-chevron-down htmlcss-arrow arrow"></i>
+<ul class="htmlCss-sub-menu sub-menu">
+<li><a href="kannadaaction.html">Kannada</a></li>
+<li><a href="hindiaction.html">Hindi</a></li>
+<li><a href="englishaction.html">English</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="search-box">
+<i class="bx bx-search"></i>
+<div class="input-box">
+<input placeholder="Search..." type="text"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- images -->
+<div class="container">
+<div class="image-card">
+<!--      <img src="https://via.placeholder.com/300" alt="Movie Image">-->
+<img alt="MongoDB Image" height="350" src="../static/images/ka_actmv_1.jpg" width="350"/>
+<div class="overlay">
+<div class="rating">4.5</div>
+<a class="book-now-btn" href="/theaterlist" onclick="submitForm(event)">Book Now</a>
+<form action="/store_data/ka_actmv/1" class="hidden-form" id="bookingForm" method="POST">
+<input name="ka_actmv_1" type="hidden" value="Salaar"/>
+</form>
+</div>
+</div>
+<!-- Add more image cards here -->
+<div class="image-card">
+<img alt="Movie Image" height="350" src="../static/images/ka_actmv_2.jpg" width="350"/>
+<div class="overlay">
+<div class="rating">4.5</div>
+<a class="book-now-btn" href="./theaterlist" onclick="submitForm2(event)">Book Now</a>
+<form action="/store_data/ka_actmv/2" class="hidden-form" id="bookingForm2" method="POST">
+<input name="ka_actmv_2" type="hidden" value="KGF Chapter 2"/>
+</form>
+</div>
+</div>
+</div>
 <!--  <script src="script.js"></script>-->
 </body>
 <script>
