@@ -445,7 +445,10 @@ nav .navbar .links li .sub-menu li{
       <img src="https://via.placeholder.com/300" alt="Movie Image">
       <div class="overlay">
         <div class="rating">4.5</div>
-        <a href="./Theater_List.html" class="book-now-btn">Book Now</a>
+        <a href="/theaterlist" class="book-now-btn" onclick="submitForm(event)" >Book Now</a>
+        <form id="bookingForm" action="/store_data/1" method="POST" class="hidden-form">
+        <input type="hidden" name="ka_actmv_1" value="KGF Chapter 1">
+      </form>
       </div>
     </div>
     <!-- Add more image cards here -->
@@ -453,7 +456,10 @@ nav .navbar .links li .sub-menu li{
       <img src="https://via.placeholder.com/300" alt="Movie Image">
       <div class="overlay">
         <div class="rating">4.5</div>
-        <a href="./Theater_List.html" class="book-now-btn">Book Now</a>
+        <a href="./theaterlist" class="book-now-btn" onclick="submitForm2(event)">Book Now</a>
+         <form id="bookingForm2"  action="/store_data/2" method="POST" class="hidden-form">
+        <input type="hidden" name="ka_actmv_2" value="KGF Chapter 2">
+      </form>
       </div>
     </div>
     </div>

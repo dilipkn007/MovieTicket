@@ -394,38 +394,38 @@ nav .navbar .links li .sub-menu li{
             <a href="#">Horrer</a>
             <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
             <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="kannadahorror.html">Kannada</a></li>
+              <li><a href="/kannadahorror">Kannada</a></li>
               
-              <li><a href="hindihorror.html">Hindi</a></li>
-              <li><a href="englishhorror.html">English</a></li>
+              <li><a href="/hindihorror">Hindi</a></li>
+              <li><a href="/englishhorror">English</a></li>
             </ul>
           </li>
           <li>
             <a href="#">Comedy</a>
             <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
             <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="kannadacomdey.html">Kannada</a></li>
-              <li><a href="hindicomdey.html">Hindi</a></li>
-              <li><a href="englishcomdey.html">English</a></li>
+              <li><a href="/kannadacomdey">Kannada</a></li>
+              <li><a href="/hindicomdey">Hindi</a></li>
+              <li><a href="/englishcomdey">English</a></li>
             </ul>
           </li>
           <li>
             <a href="#">Romantic</a>
             <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
             <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="kannadaromantic.html">Kannada</a></li>
-              <li><a href="hindhiromantic.html">Hindi</a></li>
-              <li><a href="englishromantic.html">English</a></li>
+              <li><a href="/kannadaromantic">Kannada</a></li>
+              <li><a href="/hindhiromantic">Hindi</a></li>
+              <li><a href="/englishromantic">English</a></li>
             </ul>
           </li>
           <li>
             <a href="#">Action</a>
             <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
             <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="kannadaaction.html">Kannada</a></li>
+              <li><a href="/kannadaaction">Kannada</a></li>
 
-              <li><a href="hindiaction.html">Hindi</a></li>
-              <li><a href="englishaction.html">English</a></li>
+              <li><a href="/hindiaction">Hindi</a></li>
+              <li><a href="/englishaction">English</a></li>
             </ul>
           </li>
         </ul>
@@ -445,7 +445,10 @@ nav .navbar .links li .sub-menu li{
       <img src="https://via.placeholder.com/300" alt="Movie Image">
       <div class="overlay">
         <div class="rating">4.5</div>
-        <a href="./Theater_List.html" class="book-now-btn">Book Now</a>
+        <a href="/theaterlist" class="book-now-btn" onclick="submitForm(event)" >Book Now</a>
+        <form id="bookingForm" action="/store_data/1" method="POST" class="hidden-form">
+        <input type="hidden" name="ka_actmv_1" value="KGF Chapter 1">
+      </form>
       </div>
     </div>
     <!-- Add more image cards here -->
@@ -453,7 +456,10 @@ nav .navbar .links li .sub-menu li{
       <img src="https://via.placeholder.com/300" alt="Movie Image">
       <div class="overlay">
         <div class="rating">4.5</div>
-        <a href="./Theater_List.html" class="book-now-btn">Book Now</a>
+        <a href="./theaterlist" class="book-now-btn" onclick="submitForm2(event)">Book Now</a>
+         <form id="bookingForm2"  action="/store_data/2" method="POST" class="hidden-form">
+        <input type="hidden" name="ka_actmv_2" value="KGF Chapter 2">
+      </form>
       </div>
     </div>
     </div>
